@@ -29,7 +29,8 @@ var wordlist = [
     
     var enter = function(){
         var f = document.wordform; 
-        var b = f.elements["wordtext"]; // the letter provided by the user
+        var b = f.elements["wordtext"];
+        var userGuess = b.value;
         userGuess = userGuess.toUpperCase();
         for (var i = 0; i < newword.length; i++){
             if(newword[i] === userGuess){
