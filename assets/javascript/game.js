@@ -4,7 +4,14 @@ var wordlist = [
       ["D","A","L","L","A","S"],
       ["D","E","T","R","O","I","T"],
       ["S","E","A","T","T","L","E"],
-      ["N","E","W","A","R","K"]
+      ["N","E","W","A","R","K"],
+      ["M","I","A","M","I"],
+      ["S","W","E","E","T","W","A","T","E","R"],
+      ["B","O","S","T","O","N"],
+      ["C","A","M","B","R","I","D","G","E"],
+      ["B","U","F","F","A","L","O"],
+
+
     ]
     var random = Math.floor((Math.random()*(wordlist.length-1))); 
     
@@ -28,13 +35,13 @@ var wordlist = [
     
     
     var enter = function(){
-        var f = document.wordform; 
-        var b = f.elements["wordtext"];
-        var userGuess = b.value;
-        userGuess = userGuess.toUpperCase();
-        for (var i = 0; i < newword.length; i++){
-            if(newword[i] === userGuess){
-                randdomword[i] = userGuess + " ";
+                var f = document.wordform; 
+                var b = f.elements["wordtext"];
+                var userGuess = b.value;
+                userGuess = userGuess.toUpperCase();
+                for (var i = 0; i < newword.length; i++){
+                    if(newword[i] === userGuess){
+                        randdomword[i] = userGuess + " ";
                 var answer = true;
             }
         b.value = "";
@@ -45,14 +52,14 @@ var wordlist = [
         demo.innerHTML=""; 
         printranddomword();
         
-       if(!answer){
-            var wrongletter = document.getElementById("wrongletter");
-            var guessword = document.createTextNode(" " + userGuess);
-            wrongletter.appendChild(guessword); 
-            initial++;
-            var hangman = document.getElementById("hangman");
-        hangman.src = "http://www.writteninpencil.de/Projekte/Hangman/hangman" + initial + ".png";
-        }
+            if(!answer){
+                    var wrongletter = document.getElementById("wrongletter");
+                    var guessword = document.createTextNode(" " + userGuess);
+                    wrongletter.appendChild(guessword); 
+                    initial++;
+                var hangman = document.getElementById("hangman");
+                hangman.src = "http://www.writteninpencil.de/Projekte/Hangman/hangman" + initial + ".png";
+                }
         
         var letterlist = true;
         for (var i = 0; i < randdomword.length; i++){
@@ -61,11 +68,11 @@ var wordlist = [
             }
         }
         if(letterlist){
-            window.alert("You win!");
+            alert("YOU WIN!!");
         }
         
         if(initial === 6){
-            window.alert("Uh...I guess you're dead now.");
+            alert("YOU ARE DEAD!!");
         }
     }
     
